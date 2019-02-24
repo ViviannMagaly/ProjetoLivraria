@@ -13,6 +13,15 @@ namespace ProjetoLivraria {
     public partial class SiteMaster {
         
         /// <summary>
+        /// Controle formPrincipal.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlForm formPrincipal;
+        
+        /// <summary>
         /// Controle MainContent.
         /// </summary>
         /// <remarks>

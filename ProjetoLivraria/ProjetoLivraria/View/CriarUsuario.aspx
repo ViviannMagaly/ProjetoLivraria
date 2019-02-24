@@ -10,7 +10,7 @@
     <br />
     <asp:Label ID="Label2" runat="server" Text="Email:"></asp:Label>
     <br />
-    <asp:TextBox ID="edtEmail" runat="server" OnTextChanged="edtEmail_TextChanged" CausesValidation="True" TextMode="Email"></asp:TextBox>
+    <asp:TextBox ID="edtEmail" runat="server" CausesValidation="True" TextMode="Email"></asp:TextBox>
     <br />
     <br />
     <asp:Label ID="Label3" runat="server" Text="Senha:"></asp:Label>

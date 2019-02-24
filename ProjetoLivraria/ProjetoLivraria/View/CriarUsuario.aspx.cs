@@ -34,13 +34,8 @@ namespace ProjetoLivraria
             }
             else
             {
-                // Erro senha
+                Page.ClientScript.RegisterStartupScript(this.GetType(), "mensagem", string.Format("Alerta('{0}');", "A senha e a confirmação de senha precisam ser iguais."), true);
             }
-        }
-
-        protected void edtEmail_TextChanged(object sender, EventArgs e)
-        {
-            //Validação email
-        }
+        }        
     }
 }

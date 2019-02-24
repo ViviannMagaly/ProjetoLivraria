@@ -28,7 +28,7 @@ namespace ProjetoLivraria.View
             }
             catch (Exception ex)
             {
-                //erro
+                Page.ClientScript.RegisterStartupScript(this.GetType(), "mensagem", string.Format("Alerta('{0}');", ex.Message), true);
             }
         }
     }
