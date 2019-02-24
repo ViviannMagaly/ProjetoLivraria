@@ -112,6 +112,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="View\CriarUsuario.aspx" />
+    <Content Include="View\Livros.aspx" />
+    <Content Include="View\EdicaoLivro.aspx" />
+    <Content Include="View\Login.aspx" />
     <Content Include="View\Sobre.aspx" />
     <Content Include="View\Contato.aspx" />
     <Content Include="Content\bootstrap-theme.css" />
@@ -168,12 +171,34 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="Controller\NegocioSenha.cs" />
     <Compile Include="View\CriarUsuario.aspx.cs">
       <DependentUpon>CriarUsuario.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="View\CriarUsuario.aspx.designer.cs">
       <DependentUpon>CriarUsuario.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\Livros.aspx.cs">
+      <DependentUpon>Livros.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\Livros.aspx.designer.cs">
+      <DependentUpon>Livros.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\EdicaoLivro.aspx.cs">
+      <DependentUpon>EdicaoLivro.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\EdicaoLivro.aspx.designer.cs">
+      <DependentUpon>EdicaoLivro.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
     <Compile Include="View\Sobre.aspx.cs">
       <DependentUpon>Sobre.aspx</DependentUpon>

@@ -7,10 +7,19 @@
 // </gerado automaticamente>
 //------------------------------------------------------------------------------
 
-namespace ProjetoLivraria {
+namespace ProjetoLivraria.View {
     
     
-    public partial class CriarUsuario {
+    public partial class NovoLivro {
+        
+        /// <summary>
+        /// Controle edtTitulo.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label edtTitulo;
         
         /// <summary>
         /// Controle Label1.
@@ -22,13 +31,31 @@ namespace ProjetoLivraria {
         protected global::System.Web.UI.WebControls.Label Label1;
         
         /// <summary>
-        /// Controle edtNome.
+        /// Controle edtISBN.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox edtNome;
+        protected global::System.Web.UI.WebControls.TextBox edtISBN;
+        
+        /// <summary>
+        /// Controle Label5.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label5;
+        
+        /// <summary>
+        /// Controle edtAutor.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox edtAutor;
         
         /// <summary>
         /// Controle Label2.
@@ -40,13 +67,13 @@ namespace ProjetoLivraria {
         protected global::System.Web.UI.WebControls.Label Label2;
         
         /// <summary>
-        /// Controle edtEmail.
+        /// Controle edtNome.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox edtEmail;
+        protected global::System.Web.UI.WebControls.TextBox edtNome;
         
         /// <summary>
         /// Controle Label3.
@@ -58,13 +85,13 @@ namespace ProjetoLivraria {
         protected global::System.Web.UI.WebControls.Label Label3;
         
         /// <summary>
-        /// Controle edtSenha.
+        /// Controle edtPreco.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox edtSenha;
+        protected global::System.Web.UI.WebControls.TextBox edtPreco;
         
         /// <summary>
         /// Controle Label4.
@@ -76,13 +103,13 @@ namespace ProjetoLivraria {
         protected global::System.Web.UI.WebControls.Label Label4;
         
         /// <summary>
-        /// Controle edtConfirmarSenha.
+        /// Controle edtDataPublicacao.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox edtConfirmarSenha;
+        protected global::System.Web.UI.WebControls.TextBox edtDataPublicacao;
         
         /// <summary>
         /// Controle btnConfirmar.

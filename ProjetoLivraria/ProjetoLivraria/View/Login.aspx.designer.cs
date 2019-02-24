@@ -7,10 +7,10 @@
 // </gerado automaticamente>
 //------------------------------------------------------------------------------
 
-namespace ProjetoLivraria {
+namespace ProjetoLivraria.View {
     
     
-    public partial class CriarUsuario {
+    public partial class Login {
         
         /// <summary>
         /// Controle Label1.
@@ -22,24 +22,6 @@ namespace ProjetoLivraria {
         protected global::System.Web.UI.WebControls.Label Label1;
         
         /// <summary>
-        /// Controle edtNome.
-        /// </summary>
-        /// <remarks>
-        /// Campo gerado automaticamente.
-        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox edtNome;
-        
-        /// <summary>
-        /// Controle Label2.
-        /// </summary>
-        /// <remarks>
-        /// Campo gerado automaticamente.
-        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label2;
-        
-        /// <summary>
         /// Controle edtEmail.
         /// </summary>
         /// <remarks>
@@ -49,13 +31,13 @@ namespace ProjetoLivraria {
         protected global::System.Web.UI.WebControls.TextBox edtEmail;
         
         /// <summary>
-        /// Controle Label3.
+        /// Controle Label5.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label3;
+        protected global::System.Web.UI.WebControls.Label Label5;
         
         /// <summary>
         /// Controle edtSenha.
@@ -67,30 +49,12 @@ namespace ProjetoLivraria {
         protected global::System.Web.UI.WebControls.TextBox edtSenha;
         
         /// <summary>
-        /// Controle Label4.
+        /// Controle btnLogin.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label4;
-        
-        /// <summary>
-        /// Controle edtConfirmarSenha.
-        /// </summary>
-        /// <remarks>
-        /// Campo gerado automaticamente.
-        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox edtConfirmarSenha;
-        
-        /// <summary>
-        /// Controle btnConfirmar.
-        /// </summary>
-        /// <remarks>
-        /// Campo gerado automaticamente.
-        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnConfirmar;
+        protected global::System.Web.UI.WebControls.Button btnLogin;
     }
 }
