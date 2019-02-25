@@ -22,6 +22,9 @@ namespace ProjetoLivraria
 
             if (Session["UsuarioLogado"] != null)
                 Response.Redirect("Livros.aspx");
+
+            if (Request.Params["msg"] != null)
+                Page.ClientScript.RegisterStartupScript(this.GetType(), "mensagem", string.Format("Alerta('{0}');", "Por favor, realize o login."), true);
         }
 
         protected void btnLogin_Click(object sender, EventArgs e)

@@ -20,11 +20,8 @@ namespace ProjetoLivraria
             ScriptManager.RegisterClientScriptInclude(this, this.GetType(), "popper", @"https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js");
             ScriptManager.RegisterClientScriptInclude(this, this.GetType(), "Ajax Jquery", @"https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js");
 
-            if (!this.Page.AppRelativeVirtualPath.Contains("Default") && Session["UsuarioLogado"] == null)
-            {
-                Page.ClientScript.RegisterStartupScript(this.GetType(), "mensagem", string.Format("Alerta('{0}');", "Por favor, realize o login."), true);
-                Response.Redirect("Default.aspx");
-            }
+            if (!this.Page.AppRelativeVirtualPath.Contains("Default") && this.Page.AppRelativeVirtualPath.Contains("Contato") && this.Page.AppRelativeVirtualPath.Contains("Sobre") && Session["UsuarioLogado"] == null)            
+                Response.Redirect("Default.aspx?msg='true'");            
         }
     }
 }
