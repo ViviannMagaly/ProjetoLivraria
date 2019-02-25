@@ -1,7 +1,8 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="EdicaoLivro.aspx.cs" Inherits="ProjetoLivraria.View.NovoLivro" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
-    <h1><asp:Label ID="edtTitulo" runat="server" Text="Novo Livro"></asp:Label></h1>
+    <h1>
+        <asp:Label ID="edtTitulo" runat="server" Text="Novo Livro"></asp:Label></h1>
     <br />
     <br />
     <asp:Label ID="Label1" runat="server" Text="ISBN:"></asp:Label>
@@ -22,8 +23,10 @@
     <br />
     <asp:Label ID="Label4" runat="server" Text="Data Publicação:"></asp:Label>
     <br />
-     <asp:TextBox ID="edtDataPublicacao" runat="server" TextMode="Date"></asp:TextBox>
+    <asp:TextBox ID="edtDataPublicacao" runat="server" TextMode="Date"></asp:TextBox>
     <br />
+    <div id="mensagem"></div>
     <br />
     <asp:Button ID="btnConfirmar" runat="server" class="btn btn-outline-primary" Text="Confirmar" OnClick="btnConfirmar_Click" />
+    <asp:Button ID="btnCancelar" runat="server" class="btn btn-outline-primary" Text="Cancelar" OnClick="btnCancelar_Click" />
 </asp:Content>

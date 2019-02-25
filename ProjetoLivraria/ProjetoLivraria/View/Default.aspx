@@ -7,5 +7,7 @@
         <br />
         <br />
         <asp:Button ID="btnCriarConta" runat="server" class="btn btn-outline-primary" Text="Novo Usuario" Width="120px" OnClick="btnCriarConta_Click" />
+        <br />
+        <div id="mensagem"></div>        
     </div>
 </asp:Content>

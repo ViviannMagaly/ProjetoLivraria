@@ -12,7 +12,7 @@
     <br />
     <asp:TextBox ID="edtSenha" runat="server" TextMode="Password"></asp:TextBox>
     <br />
+    <div id="mensagem"></div>
     <br />
     <asp:Button ID="btnLogin" runat="server" class="btn btn-outline-primary" Text="Login" OnClick="btnLogin_Click" />
-
 </asp:Content>

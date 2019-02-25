@@ -37,8 +37,8 @@ namespace ProjetoLivraria.View
             edtISBN.Text = LivroSelecionado.Isbn.ToString();
             edtAutor.Text = LivroSelecionado.Autor;
             edtNome.Text = LivroSelecionado.Nome;
-            edtPreco.Text = LivroSelecionado.Preco.ToString();
-            edtDataPublicacao.Text = LivroSelecionado.DataPublicacao.ToString();
+            edtPreco.Text = LivroSelecionado.Preco.ToString().Replace(',', '.');
+            edtDataPublicacao.Text = LivroSelecionado.DataPublicacao.Date.ToString("yyyy-MM-dd");
 
             edtISBN.Enabled = false;
         }
@@ -74,6 +74,11 @@ namespace ProjetoLivraria.View
             {
                 Page.ClientScript.RegisterStartupScript(this.GetType(), "mensagem", string.Format("Alerta('{0}');", ex.Message), true);
             }
+        }
+
+        protected void btnCancelar_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Livros.aspx");
         }
     }
 }

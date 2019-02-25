@@ -21,6 +21,7 @@
     <br />
     <asp:TextBox ID="edtConfirmarSenha" runat="server" TextMode="Password"></asp:TextBox>
     <br />
+    <div id="mensagem"></div>
     <br />
     <asp:Button ID="btnConfirmar" runat="server" class="btn btn-outline-primary" Text="Confirmar" OnClick="btnConfirmar_Click" />
 </asp:Content>
