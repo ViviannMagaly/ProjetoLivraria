@@ -66,8 +66,7 @@ namespace ProjetoLivraria.View
                     LivroSelecionado.Nome = edtNome.Text;
                     LivroSelecionado.Preco = Convert.ToDecimal(edtPreco.Text);
                     LivroSelecionado.DataPublicacao = Convert.ToDateTime(edtDataPublicacao.Text);
-
-                    Negocio.EditarLivro(LivroSelecionado);
+                    
                     Response.Redirect("Livros.aspx");
                 }
             }

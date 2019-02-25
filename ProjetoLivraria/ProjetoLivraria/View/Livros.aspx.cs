@@ -20,7 +20,7 @@ namespace ProjetoLivraria.View
 
             Usuario usuario = Session["UsuarioLogado"] as Usuario;
 
-            ListaLivros = Negocio.ObtemLivros(usuario);
+            ListaLivros = Negocio.ObtemLivros();
             grdLivros.DataSource = ListaLivros;
             grdLivros.DataBind();
         }

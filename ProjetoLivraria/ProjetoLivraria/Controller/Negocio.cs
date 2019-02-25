@@ -31,10 +31,8 @@ namespace ProjetoLivraria.Controller
 
         public void AdicionarLivro(Livro livro, Usuario usuario)
         {
-            List<Livro> livrosDoUsuario = ObtemLivros(usuario);
-
-            if (livrosDoUsuario.Where(l => l.Isbn == livro.Isbn).Count() > 0)
-                throw new Exception("Não é possível adicionar outro livro com o mesmo ISBN.");
+            if (Livros.Where(l => l.Isbn == livro.Isbn).Count() > 0)
+                throw new ArgumentException("Não é possível adicionar outro livro com o mesmo ISBN.");
             else
             {
                 livro.IdLivro = (Livros.Count == 0 ? 0 : Livros.Max(m => m.IdLivro)) + 1;
@@ -46,17 +44,10 @@ namespace ProjetoLivraria.Controller
 
         public void ApagarLivro(Livro livro)
         {
-            Livros.Remove(livro);
-        }
-
-        public void EditarLivro(Livro livro)
-        {
-            Livro livroVelho = Livros.Find(l => l.IdLivro == livro.IdLivro);
-
-            livroVelho.Autor = livro.Autor;
-            livroVelho.Nome = livro.Nome;
-            livroVelho.DataPublicacao = livro.DataPublicacao;
-            livroVelho.Preco = livro.Preco;
+            if (Livros.Exists(l => l.IdLivro == livro.IdLivro))
+                Livros.Remove(livro);
+            else
+                throw new Exception("O livro selecionado não foi encontrado.");
         }
 
         #endregion CRUD Livro
@@ -65,13 +56,13 @@ namespace ProjetoLivraria.Controller
 
         public void AdicionaUsuario(Usuario usuario)
         {
+            if (!usuario.Email.Contains("@"))
+                throw new ArgumentException("O e-mail precisa ter o caractere @.");
+            else if (Usuarios.Where(u => u.Email == usuario.Email).Count() > 0)
+                throw new ArgumentException("E-mail já cadastrado.");
+
             usuario.IdUsuario = (Usuarios.Count == 0 ? 0 : Usuarios.Max(m => m.IdUsuario)) + 1;
             Usuarios.Add(usuario);
-        }
-
-        public void ExcluirUsuario(Usuario usuario)
-        {
-            Usuarios.Remove(usuario);
         }
 
         public Usuario Login(string email, string senha)
@@ -85,15 +76,16 @@ namespace ProjetoLivraria.Controller
                 if (usuario != null)
                     return usuario;
                 else
-                    throw new Exception("E-mail / Senha inválidos.");
-            } catch
+                    throw new ArgumentException("E-mail / Senha inválidos.");
+            }
+            catch
             {
-                throw new Exception("E-mail / Senha inválidos.");
-            }            
+                throw new ArgumentException("E-mail / Senha inválidos.");
+            }
         }
 
         #endregion CRUD Usuario
-        
+
         public void DadosParaTeste()
         {
             Usuario usu = new Usuario();
