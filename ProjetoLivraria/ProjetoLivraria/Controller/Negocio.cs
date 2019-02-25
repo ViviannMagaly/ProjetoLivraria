@@ -25,6 +25,16 @@ namespace ProjetoLivraria.Controller
             return Livros;
         }
 
+        // Pequisar Livros
+        public List<Livro> ObtemLivros(Livro livro)
+        {
+            return Livros.Where(l => l.Autor == livro.Autor 
+                                    || l.Nome == livro.Nome 
+                                    || l.Isbn == livro.Isbn 
+                                    || l.DataPublicacao.Date == livro.DataPublicacao.Date
+                                    || l.Preco == livro.Preco).ToList();
+        }
+
         #endregion Obtenção Livros
 
         #region CRUD Livro

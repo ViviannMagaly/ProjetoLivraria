@@ -244,5 +244,177 @@ namespace ProjetoLivraria.Controller.Tests
             negocio.AdicionarLivro(livro, usuario);            
             negocio.ApagarLivro(livro);
         }
+
+        [TestMethod()]
+        public void PesquisaSucessoTest()
+        {
+            Negocio negocio = new Negocio();
+
+            Usuario usuario = new Usuario();
+            usuario.NomeUsuario = "Nome Teste";
+            usuario.Email = "email@123.com";
+            usuario.SetSenha("123");
+
+            negocio.AdicionaUsuario(usuario);
+
+            Livro livro = new Livro();
+            livro.Isbn = 1;
+            livro.Autor = "autor teste 2";
+            livro.Preco = Convert.ToDecimal(2.80);
+            livro.DataPublicacao = new DateTime(2019, 1, 31);
+            livro.Nome = "Um novo teste";
+
+            negocio.AdicionarLivro(livro, usuario);
+
+            Livro livroPesquisa = new Livro();
+            livroPesquisa.DataPublicacao = new DateTime(2019, 1, 31);
+
+            List<Livro> listaLivros = negocio.ObtemLivros(livroPesquisa);
+
+            Assert.AreEqual(listaLivros.Count, 1);
+        }
+
+        [TestMethod()]
+        public void PesquisaFalhaTest()
+        {
+            Negocio negocio = new Negocio();
+
+            Usuario usuario = new Usuario();
+            usuario.NomeUsuario = "Nome Teste";
+            usuario.Email = "email@123.com";
+            usuario.SetSenha("123");
+
+            negocio.AdicionaUsuario(usuario);
+
+            Livro livro = new Livro();
+            livro.Isbn = 1;
+            livro.Autor = "autor teste 2";
+            livro.Preco = Convert.ToDecimal(2.80);
+            livro.DataPublicacao = new DateTime(2019, 1, 31);
+            livro.Nome = "Um novo teste";
+
+            negocio.AdicionarLivro(livro, usuario);
+
+            Livro livroPesquisa = new Livro();
+            livroPesquisa.DataPublicacao = new DateTime(2019, 1, 1);
+
+            List<Livro> listaLivros = negocio.ObtemLivros(livroPesquisa);
+
+            Assert.AreEqual(listaLivros.Count, 0);
+        }
+
+        [TestMethod()]
+        public void PesquisaMaisCamposSucessoTest()
+        {
+            Negocio negocio = new Negocio();
+
+            Usuario usuario = new Usuario();
+            usuario.NomeUsuario = "Nome Teste";
+            usuario.Email = "email@123.com";
+            usuario.SetSenha("123");
+
+            negocio.AdicionaUsuario(usuario);
+
+            Livro livro = new Livro();
+            livro.Isbn = 1;
+            livro.Autor = "autor teste 2";
+            livro.Preco = Convert.ToDecimal(2.80);
+            livro.DataPublicacao = new DateTime(2019, 1, 31);
+            livro.Nome = "Um novo teste";
+
+            Livro livro2 = new Livro();
+            livro2.Isbn = 2;
+            livro2.Autor = "autor teste 3";
+            livro2.Preco = Convert.ToDecimal(10);
+            livro2.DataPublicacao = new DateTime(2019, 1, 31);
+            livro2.Nome = "Um novo teste";
+
+            negocio.AdicionarLivro(livro, usuario);
+            negocio.AdicionarLivro(livro2, usuario);
+
+            Livro livroPesquisa = new Livro();
+            livroPesquisa.DataPublicacao = new DateTime(2019, 1, 31);
+            livroPesquisa.Nome = "Um novo teste";
+
+            List<Livro> listaLivros = negocio.ObtemLivros(livroPesquisa);
+
+            Assert.AreEqual(listaLivros.Count, 2);
+        }
+
+        [TestMethod()]
+        public void PesquisaPrecoSucessoTest()
+        {
+            Negocio negocio = new Negocio();
+
+            Usuario usuario = new Usuario();
+            usuario.NomeUsuario = "Nome Teste";
+            usuario.Email = "email@123.com";
+            usuario.SetSenha("123");
+
+            negocio.AdicionaUsuario(usuario);
+
+            Livro livro = new Livro();
+            livro.Isbn = 1;
+            livro.Autor = "autor teste 2";
+            livro.Preco = Convert.ToDecimal(99.99);
+            livro.DataPublicacao = new DateTime(2019, 1, 31);
+            livro.Nome = "Um novo teste";
+
+            Livro livro2 = new Livro();
+            livro2.Isbn = 2;
+            livro2.Autor = "autor teste 3";
+            livro2.Preco = Convert.ToDecimal(99.99);
+            livro2.DataPublicacao = new DateTime(2019, 1, 31);
+            livro2.Nome = "Um novo teste";
+
+            negocio.AdicionarLivro(livro, usuario);
+            negocio.AdicionarLivro(livro2, usuario);
+
+            Livro livroPesquisa = new Livro();
+            livroPesquisa.Preco = Convert.ToDecimal(99.99);
+            livroPesquisa.Nome = null;
+
+            List<Livro> listaLivros = negocio.ObtemLivros(livroPesquisa);
+
+            Assert.AreEqual(listaLivros.Count, 2);
+        }
+
+        [TestMethod()]
+        public void PesquisaDoisLivrosComUmAtributoDeCadaSucessoTest()
+        {
+            Negocio negocio = new Negocio();
+
+            Usuario usuario = new Usuario();
+            usuario.NomeUsuario = "Nome Teste";
+            usuario.Email = "email@123.com";
+            usuario.SetSenha("123");
+
+            negocio.AdicionaUsuario(usuario);
+
+            Livro livro = new Livro();
+            livro.Isbn = 1;
+            livro.Autor = "autor teste 2";
+            livro.Preco = Convert.ToDecimal(99.99);
+            livro.DataPublicacao = new DateTime(2019, 1, 1);
+            livro.Nome = "Um teste";
+
+            Livro livro2 = new Livro();
+            livro2.Isbn = 2;
+            livro2.Autor = "autor teste 3";
+            livro2.Preco = Convert.ToDecimal(99.99);
+            livro2.DataPublicacao = new DateTime(2019, 1, 31);
+            livro2.Nome = "Outro teste";
+
+            negocio.AdicionarLivro(livro, usuario);
+            negocio.AdicionarLivro(livro2, usuario);
+
+            Livro livroPesquisa = new Livro();
+            livroPesquisa.DataPublicacao = new DateTime(2019, 1, 1);
+            livroPesquisa.Nome = "Outro teste";
+
+            List<Livro> listaLivros = negocio.ObtemLivros(livroPesquisa);
+
+            Assert.AreEqual(listaLivros.Count, 2);
+        }
     }
 }

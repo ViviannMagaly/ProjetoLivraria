@@ -22,12 +22,31 @@ namespace ProjetoLivraria.View
             UsuarioLogado = Session["UsuarioLogado"] as Usuario;
             LivroSelecionado = Session["LivroSelecionado"] as Livro;
 
+            if ((Request.Params["TipoPagina"] == "P"))
+            {
+                btnConfirmar.Visible = false;
+                btnPesquisar.Visible = true;
+                edtTitulo.Text = "Pesquisar Livro";
+            }
+            else
+            {
+                btnConfirmar.Visible = true;
+                btnPesquisar.Visible = false;
+            }
+
             if (!IsPostBack && !IsCallback)
             {
                 if (Session["LivroSelecionado"] != null)
                 {
                     ObtemDadosLivroSelecionado();
                     edtTitulo.Text = "Editar Livro";
+                } else
+                {
+                    edtISBN.Text = null;
+                    edtAutor.Text = null;
+                    edtNome.Text = null;
+                    edtPreco.Text = null;
+                    edtDataPublicacao.Text = null;
                 }
             }
         }
@@ -66,7 +85,7 @@ namespace ProjetoLivraria.View
                     LivroSelecionado.Nome = edtNome.Text;
                     LivroSelecionado.Preco = Convert.ToDecimal(edtPreco.Text);
                     LivroSelecionado.DataPublicacao = Convert.ToDateTime(edtDataPublicacao.Text);
-                    
+
                     Response.Redirect("Livros.aspx");
                 }
             }
@@ -79,6 +98,30 @@ namespace ProjetoLivraria.View
         protected void btnCancelar_Click(object sender, EventArgs e)
         {
             Response.Redirect("Livros.aspx");
+        }
+
+        protected void btnPesquisar_Click(object sender, EventArgs e)
+        {
+            Livro livroPesquisa = new Livro();
+
+            if (edtISBN.Text != "")
+                livroPesquisa.Isbn = Convert.ToInt32(edtISBN.Text);
+
+            if (edtAutor.Text != "")
+                livroPesquisa.Autor = edtAutor.Text;
+
+            if (edtNome.Text != "")
+                livroPesquisa.Nome = edtNome.Text;
+
+            if (edtPreco.Text != "")
+                livroPesquisa.Preco = Convert.ToDecimal(edtPreco.Text);
+
+            if (edtDataPublicacao.Text != "")
+                livroPesquisa.DataPublicacao = Convert.ToDateTime(edtDataPublicacao.Text);
+
+            Session["LivroPesquisa"] = livroPesquisa;
+
+            Response.Redirect("Livros.aspx?TipoPagina=P");
         }
     }
 }

@@ -116,7 +116,7 @@
     <Content Include="View\Livros.aspx" />
     <Content Include="View\EdicaoLivro.aspx" />
     <Content Include="View\Login.aspx" />
-    <Content Include="View\Sobre.aspx" />
+    <Content Include="View\Sair.aspx" />
     <Content Include="View\Contato.aspx" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
@@ -201,12 +201,12 @@
     <Compile Include="View\Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
-    <Compile Include="View\Sobre.aspx.cs">
-      <DependentUpon>Sobre.aspx</DependentUpon>
+    <Compile Include="View\Sair.aspx.cs">
+      <DependentUpon>Sair.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="View\Sobre.aspx.designer.cs">
-      <DependentUpon>Sobre.aspx</DependentUpon>
+    <Compile Include="View\Sair.aspx.designer.cs">
+      <DependentUpon>Sair.aspx</DependentUpon>
     </Compile>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="View\Contato.aspx.cs">

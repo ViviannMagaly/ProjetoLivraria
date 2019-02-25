@@ -18,11 +18,29 @@ namespace ProjetoLivraria.View
         {
             Negocio = Session["Negocio"] as Negocio;
 
-            Usuario usuario = Session["UsuarioLogado"] as Usuario;
+            Usuario usuarioLogado = Session["UsuarioLogado"] as Usuario;
 
-            ListaLivros = Negocio.ObtemLivros();
-            grdLivros.DataSource = ListaLivros;
-            grdLivros.DataBind();
+            if (usuarioLogado != null)
+            {
+                if (Request.Params["TipoPagina"] == null)
+                {
+                    ListaLivros = Negocio.ObtemLivros();
+                    edtTitulo.Text = "Livros Cadastrados";
+                }
+                else if (Request.Params["TipoPagina"] == "P")
+                {
+                    ListaLivros = Negocio.ObtemLivros(Session["LivroPesquisa"] as Livro);
+                    edtTitulo.Text = string.Format("Livros Encontrados ({0})", ListaLivros.Count);
+                }
+                else if (Request.Params["TipoPagina"] == "M")
+                {
+                    ListaLivros = Negocio.ObtemLivros(usuarioLogado);
+                    edtTitulo.Text = "Meus Livros";
+                }
+
+                grdLivros.DataSource = ListaLivros;
+                grdLivros.DataBind();
+            }
         }
 
         protected void btnAdicionar_Click(object sender, EventArgs e)

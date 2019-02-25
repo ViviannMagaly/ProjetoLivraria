@@ -7,9 +7,9 @@
 // </gerado automaticamente>
 //------------------------------------------------------------------------------
 
-namespace ProjetoLivraria {
+namespace ProjetoLivraria.View {
     
     
-    public partial class About {
+    public partial class Sair {
     }
 }
